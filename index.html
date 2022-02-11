@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <p>Loading, please wait...</p>
+<script>
+  const getRandomInt = (min, max) => Math.floor(Math.random() * (max-min) + min);
+
+  function randomGame (min, max) {
+    const randomInt = getRandomInt(min, max);
+    console.log(randomInt);
+
+    while (true) {
+      const num = prompt('Введите число');
+      if (isNaN(num)) alert('Вы ввели не число');
+      if (randomInt > num) alert('Больше');
+      if (randomInt < num) alert('Меньше');
+      if (randomInt == num) {
+        alert(`Отгадано число ${num}`);
+        break;
+        }
+      }
+    }
+
+  randomGame(0, 1000)
+</script>
+</body>
+</html>
